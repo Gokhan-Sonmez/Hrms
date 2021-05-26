@@ -12,7 +12,8 @@ public interface CandidateUserService {
     DataResult<List<CandidateUser>> getAll();
 
 	
-	
+    DataResult<CandidateUser> findByNationalityNumber(String nationalityNumber);
+    
 	Result add(CandidateUser candidateUser);
 	
 	

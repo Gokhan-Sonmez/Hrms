@@ -37,4 +37,15 @@ public class CandidateUserManager implements CandidateUserService {
 		return new SuccessResult("candidateUser added");
 	}
 
+	@Override
+	public DataResult<CandidateUser> findByNationalityNumber(String nationalityNumber) {
+		
+		return new SuccessDataResult<CandidateUser>
+		(candidateUserDao.findByNationalityNumber(nationalityNumber));
+	}
+	
+	
+	
+	
+
 }

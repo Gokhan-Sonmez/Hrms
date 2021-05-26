@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -32,7 +33,7 @@ public class CandidateUsersController {
 	}
 	
 	@PostMapping("/add")
-	Result add(CandidateUser candidateUser) {
+	Result add(@RequestBody CandidateUser candidateUser) {
 		return this.candidateUserService.add(candidateUser);
 		
 	}
