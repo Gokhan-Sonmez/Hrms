@@ -8,4 +8,5 @@ public interface CandidateUserDao extends JpaRepository<CandidateUser,Integer>{
 	
 	CandidateUser findByNationalityNumber(String nationalityNumber);
 
+	
 }

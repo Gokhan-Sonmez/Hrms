@@ -9,7 +9,6 @@ import HrmsProject.Hrms.entities.concretes.EmployerUser;
 public interface AuthService {
 
 
-	
 	Result registerEmployer(EmployerUser employer);
 	Result registerCandinateUser(CandidateUser candidate);
 	

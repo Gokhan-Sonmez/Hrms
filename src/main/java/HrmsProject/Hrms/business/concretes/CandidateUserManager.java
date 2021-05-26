@@ -45,7 +45,7 @@ public class CandidateUserManager implements CandidateUserService {
 	}
 	
 	
-	
+
 	
 
 }

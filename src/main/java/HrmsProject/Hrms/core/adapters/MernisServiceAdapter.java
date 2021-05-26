@@ -10,4 +10,5 @@ public class MernisServiceAdapter implements MernisService {
 		return true;
 	}
 
+	
 }

@@ -13,6 +13,7 @@ import HrmsProject.Hrms.core.utilities.results.SuccessResult;
 import HrmsProject.Hrms.dataAccess.abstracts.EmployeeUserDao;
 import HrmsProject.Hrms.entities.concretes.EmployeeUser;
 
+
 @Service
 public class EmployeeUserManager implements EmployeeUserService {
 	

@@ -36,10 +36,8 @@ public class AuthManager implements AuthService{
 		this.mernisService = mernisService;
 		this.candidateService = candidateService;
 		this.employerService = employerService;
+		
 	}
-
-
-
 
 
 	@Override

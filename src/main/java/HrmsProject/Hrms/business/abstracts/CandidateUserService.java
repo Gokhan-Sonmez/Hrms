@@ -17,4 +17,5 @@ public interface CandidateUserService {
 	Result add(CandidateUser candidateUser);
 	
 	
+	
 }
