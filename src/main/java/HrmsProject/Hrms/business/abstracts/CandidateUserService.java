@@ -12,7 +12,7 @@ public interface CandidateUserService {
     DataResult<List<CandidateUser>> getAll();
 
 	
-    DataResult<CandidateUser> findByNationalityNumber(String nationalityNumber);
+    DataResult<CandidateUser> findByNationalityNumber(String identityNumber);
     
 	Result add(CandidateUser candidateUser);
 	

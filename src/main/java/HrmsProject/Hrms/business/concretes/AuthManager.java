@@ -32,7 +32,7 @@ public class AuthManager implements AuthService{
 			EmployerUserService employerService,CandidateUserService candidateService) {
 		super();
 		this.userService = userService;
-		this.emailService =emailService;
+		this.emailService = emailService;
 		this.mernisService = mernisService;
 		this.candidateService = candidateService;
 		this.employerService = employerService;
@@ -112,17 +112,17 @@ public class AuthManager implements AuthService{
 		return false;
 	}
 	
-	private boolean checkIfRealPerson(String nationalNumber, String firstName, String lastName, int yearOfBirth) {
+	private boolean checkIfRealPerson(String identityNumber, String firstName, String lastName, int yearOfBirth) {
 
-		if (mernisService.checkIfRealPerson(nationalNumber, firstName, lastName, yearOfBirth)) {
+		if (mernisService.checkIfRealPerson(identityNumber, firstName, lastName, yearOfBirth)) {
 			return true;
 		}
 		return false;
 	}
 	
-	private boolean checkIfExistsTcNo(String nationalId) {
+	private boolean checkIfExistsTcNo(String identityNumber) {
 
-		if (this.candidateService.findByNationalityNumber(nationalId).getData() == null) {
+		if (this.candidateService.findByNationalityNumber(identityNumber).getData() == null) {
 			return true;
 		}
 		return false;

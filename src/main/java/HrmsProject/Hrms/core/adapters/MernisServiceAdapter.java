@@ -1,7 +1,9 @@
 package HrmsProject.Hrms.core.adapters;
 
-import HrmsProject.Hrms.core.services.MernisService;
+import org.springframework.stereotype.Service;
 
+import HrmsProject.Hrms.core.services.MernisService;
+@Service
 public class MernisServiceAdapter implements MernisService {
 
 	@Override

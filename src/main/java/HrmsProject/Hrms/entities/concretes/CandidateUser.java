@@ -27,7 +27,7 @@ public class CandidateUser extends User {
     @Column(name = "last_name")
     private String lastName;
 
-    @Column(name = "identity_number")
+    @Column(name = "national_identity")
     private String identityNumber;
 
     @Column(name = "date_of_birth")
