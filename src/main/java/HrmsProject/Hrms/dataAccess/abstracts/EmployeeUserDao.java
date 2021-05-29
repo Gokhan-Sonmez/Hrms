@@ -6,5 +6,5 @@ import HrmsProject.Hrms.entities.concretes.EmployeeUser;
 
 public interface EmployeeUserDao extends JpaRepository<EmployeeUser,Integer> {
 
-	EmployeeUser findUserByEmail(String email);
+	EmployeeUser getByEmail(String email);
 }

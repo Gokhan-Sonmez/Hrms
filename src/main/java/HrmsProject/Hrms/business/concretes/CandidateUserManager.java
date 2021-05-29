@@ -38,10 +38,10 @@ public class CandidateUserManager implements CandidateUserService {
 	}
 
 	@Override
-	public DataResult<CandidateUser> findByNationalityNumber(String identityNumber) {
+	public DataResult<CandidateUser> getByIdentityNumber(String identityNumber) {
 		
 		return new SuccessDataResult<CandidateUser>
-		(candidateUserDao.findByIdentityNumber(identityNumber));
+		(candidateUserDao.getByIdentityNumber(identityNumber));
 	}
 	
 	

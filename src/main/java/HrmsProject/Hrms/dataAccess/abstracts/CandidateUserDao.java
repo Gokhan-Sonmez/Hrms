@@ -6,7 +6,7 @@ import HrmsProject.Hrms.entities.concretes.CandidateUser;
 
 public interface CandidateUserDao extends JpaRepository<CandidateUser,Integer>{
 	
-	CandidateUser findByIdentityNumber(String identityNumber);
+	CandidateUser getByIdentityNumber(String identityNumber);
 
 	
 }

@@ -6,5 +6,6 @@ import HrmsProject.Hrms.entities.concretes.JobPosition;
 
 public interface JobPositionDao  extends JpaRepository<JobPosition,Integer>{
 
+	JobPosition getByName(String name);
 	
 }
