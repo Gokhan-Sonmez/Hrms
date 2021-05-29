@@ -1,6 +1,6 @@
 package HrmsProject.Hrms.business.concretes;
 
-import java.time.LocalDate;
+
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,7 +35,7 @@ public class JobAdvertisementManager implements JobAdvertisementService{
 	public DataResult<List<JobAdvertisement>> getAllByEmployerUser(int employerId) {
 		
 		return new SuccessDataResult<List<JobAdvertisement>>
-		(jobAdvertisementDao.getByEmployerUser(employerId));
+		(jobAdvertisementDao.getByEmployerUser_Id(employerId));
 	}
 
 	@Override
@@ -45,17 +45,25 @@ public class JobAdvertisementManager implements JobAdvertisementService{
 		(jobAdvertisementDao.getByStatus(status));
 	}
 
-	@Override
-	public DataResult<List<JobAdvertisement>> getAllByDeadlineLessThanEqual(LocalDate date) {
-		
-		return new SuccessDataResult<List<JobAdvertisement>>
-		(jobAdvertisementDao.getAllByDeadlineLessThanEqual(date));
-	}
+
 
 	@Override
 	public Result add(JobAdvertisement jobAdvertisement) {
 		jobAdvertisementDao.save(jobAdvertisement);
 		return new SuccessResult("JobAdvertisement added");
+	}
+
+	@Override
+	public DataResult<List<JobAdvertisement>> getByStatusTrueOrderByCreateDate() {
+		return new SuccessDataResult<List<JobAdvertisement>>
+		(jobAdvertisementDao.getByStatusTrueOrderByCreateDate());
+	
+	}
+
+	@Override
+	public DataResult<List<JobAdvertisement>> getByStatusTrueAndEmployerUser_CompanyName(String companyName) {
+		return new SuccessDataResult<List<JobAdvertisement>>
+		(jobAdvertisementDao.getByStatusTrueAndEmployerUser_CompanyName(companyName));
 	}
 
 }

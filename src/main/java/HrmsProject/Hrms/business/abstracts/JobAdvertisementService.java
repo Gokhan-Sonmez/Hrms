@@ -1,6 +1,6 @@
 package HrmsProject.Hrms.business.abstracts;
 
-import java.time.LocalDate;
+
 import java.util.List;
 
 import HrmsProject.Hrms.core.utilities.results.DataResult;
@@ -11,9 +11,14 @@ public interface JobAdvertisementService {
 
 	
 	DataResult<List<JobAdvertisement>> getAll();
-	DataResult<List<JobAdvertisement>> getAllByEmployerUser(int employerId);
-	DataResult<List<JobAdvertisement>> getAllByStatus(Boolean status);
-	DataResult<List<JobAdvertisement>> getAllByDeadlineLessThanEqual(LocalDate date);
 	
+	DataResult<List<JobAdvertisement>> getAllByEmployerUser(int employerId);
+	
+	DataResult<List<JobAdvertisement>> getAllByStatus(Boolean status);
+	
+	DataResult<List<JobAdvertisement>> getByStatusTrueOrderByCreateDate();
+	
+	DataResult<List<JobAdvertisement>> getByStatusTrueAndEmployerUser_CompanyName(String companyName);
+
 	Result add(JobAdvertisement jobAdvertisement);
 }

@@ -1,17 +1,20 @@
 package HrmsProject.Hrms.entities.concretes;
 
-import java.math.BigDecimal;
+
 import java.time.LocalDate;
 
-
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+
+
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -39,11 +42,11 @@ public class JobAdvertisement {
 //	private int employerId;	
 	
 	@Column(name="min_salary")
-	private BigDecimal minSalary;
+	private int minSalary;
 	
 	
 	@Column(name="max_salary")
-	private BigDecimal maxSalary;
+	private int maxSalary;
 	
 	
 	@Column(name="job_detail")
@@ -52,8 +55,8 @@ public class JobAdvertisement {
 	@Column(name="open_position")
 	private int openPosition;
 	
-	@Column(name="create_date")
-	private LocalDate createDate;
+	@Column(name="create_date", columnDefinition = "Date default CURRENT_DATE")
+	private LocalDate createDate=LocalDate.now();
 	
 	@Column(name="deadline")
 	private LocalDate deadline;
@@ -61,15 +64,16 @@ public class JobAdvertisement {
 	@Column(name="status")
 	private Boolean status;
 	
-	@ManyToOne()
+ 
+	@ManyToOne(fetch = FetchType.LAZY, cascade={ CascadeType.PERSIST, CascadeType.MERGE })
     @JoinColumn(name="city_id")
     private City city;
 
-	@ManyToOne()
+	@ManyToOne(fetch = FetchType.LAZY, cascade={ CascadeType.PERSIST, CascadeType.MERGE })
     @JoinColumn(name="job_position_id")
     private JobPosition jobPosition;
 	
-	@ManyToOne()
+	@ManyToOne(fetch = FetchType.LAZY, cascade={ CascadeType.PERSIST, CascadeType.MERGE })
     @JoinColumn(name="employer_id")
     private EmployerUser employerUser;
 

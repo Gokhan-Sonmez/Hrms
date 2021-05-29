@@ -1,6 +1,6 @@
 package HrmsProject.Hrms.api.controllers;
 
-import java.time.LocalDate;
+
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -48,9 +48,15 @@ public class JobAdvertisementsController {
 		
 	}
 	
-	@GetMapping("/getAllbydeadline")
-	DataResult<List<JobAdvertisement>> getAllByDeadlineLessThanEqual(@RequestParam LocalDate date){
-		return jobAdvertisementService.getAllByDeadlineLessThanEqual(date);
+	@GetMapping("/getallbycreatedate")
+	DataResult<List<JobAdvertisement>> getByStatusTrueOrderByCreateDate(){
+		return jobAdvertisementService.getByStatusTrueOrderByCreateDate();
+		
+	}
+	
+	@GetMapping("/getallbycompanyname")
+	DataResult<List<JobAdvertisement>> getByStatusTrueAndEmployerUser_CompanyName(@RequestParam String companyName){
+		return jobAdvertisementService.getByStatusTrueAndEmployerUser_CompanyName(companyName);
 		
 	}
 	@PostMapping("/add")
