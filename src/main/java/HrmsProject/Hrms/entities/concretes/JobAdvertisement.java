@@ -70,7 +70,7 @@ public class JobAdvertisement {
     private JobPosition jobPosition;
 	
 	@ManyToOne()
-    @JoinColumn(name="employerId")
+    @JoinColumn(name="employer_id")
     private EmployerUser employerUser;
 
 

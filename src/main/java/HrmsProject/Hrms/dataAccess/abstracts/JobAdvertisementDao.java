@@ -9,8 +9,8 @@ import HrmsProject.Hrms.entities.concretes.JobAdvertisement;
 
 public interface JobAdvertisementDao extends JpaRepository<JobAdvertisement, Integer> {
 
-	List<JobAdvertisement> getAllByEmployerUser(int employerId);
-	List<JobAdvertisement> getAllByStatus(Boolean status);
+	List<JobAdvertisement> getByEmployerUser(int employerId);
+	List<JobAdvertisement> getByStatus(Boolean status);
 	List<JobAdvertisement> getAllByDeadlineLessThanEqual(LocalDate date);
 	
 }
