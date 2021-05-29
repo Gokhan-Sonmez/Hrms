@@ -7,7 +7,9 @@ import org.springframework.stereotype.Service;
 
 import HrmsProject.Hrms.business.abstracts.CityService;
 import HrmsProject.Hrms.core.utilities.results.DataResult;
+import HrmsProject.Hrms.core.utilities.results.Result;
 import HrmsProject.Hrms.core.utilities.results.SuccessDataResult;
+import HrmsProject.Hrms.core.utilities.results.SuccessResult;
 import HrmsProject.Hrms.dataAccess.abstracts.CityDao;
 import HrmsProject.Hrms.entities.concretes.City;
 
@@ -33,6 +35,12 @@ public class CityManager implements CityService {
 	public DataResult<City> getByName(String name) {
 		
 		return new SuccessDataResult<City>(cityDao.getByName(name));
+	}
+
+	@Override
+	public Result add(City city) {
+		cityDao.save(city);
+		return new SuccessResult("City added");
 	}
 
 }
