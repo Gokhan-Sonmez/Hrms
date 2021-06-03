@@ -4,7 +4,11 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
@@ -18,6 +22,7 @@ import lombok.NoArgsConstructor;
 @Table(name="experiences")
 public class Experience {
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="id")
 	private int id;
 	
@@ -36,6 +41,8 @@ public class Experience {
 	@Column(name="finish_of_work")
 	private Date finishOfWork;
 	
-	
+	@ManyToOne
+	@JoinColumn(name = "resume_id",referencedColumnName =  "id")
+	private Resume resumes;
 
 }

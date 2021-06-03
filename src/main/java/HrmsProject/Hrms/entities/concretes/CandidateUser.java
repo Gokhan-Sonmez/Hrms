@@ -1,9 +1,11 @@
 package HrmsProject.Hrms.entities.concretes;
 
 import java.time.LocalDate;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.OneToMany;
 import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 
@@ -32,4 +34,8 @@ public class CandidateUser extends User {
 
     @Column(name = "date_of_birth")
     private LocalDate dateOfBirth;
+    
+    @OneToMany(mappedBy = "candidateUser")
+    private List<Resume> resumes;
+    
 }
