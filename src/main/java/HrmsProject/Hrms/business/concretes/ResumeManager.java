@@ -24,6 +24,7 @@ public class ResumeManager implements ResumeService {
 
 	private ResumeDao resumeDao;
 	private  ImageService imageService;
+	
 	@Autowired
 	public ResumeManager(ResumeDao resumeDao,ImageService imageService) {
 		this.imageService = imageService;
@@ -43,7 +44,7 @@ public class ResumeManager implements ResumeService {
 
 	@Override
 	public DataResult<List<Resume>> getByCandidate_Id(int id) {
-		return new SuccessDataResult<List<Resume>>(resumeDao.getByCandidate_Id(id),"cv listelendi");
+		return new SuccessDataResult<List<Resume>>(resumeDao.getByCandidateUser(id),"cv listelendi");
 	}
 
 	@Override

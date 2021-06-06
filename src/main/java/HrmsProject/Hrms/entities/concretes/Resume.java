@@ -46,8 +46,8 @@ public class Resume {
 	private String coverLetter;
 	
 	
-	@ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-	@JoinColumn(name="candidate_user_id",referencedColumnName =  "id")
+	@ManyToOne(fetch = FetchType.LAZY, cascade={ CascadeType.PERSIST, CascadeType.MERGE })
+	@JoinColumn(name="candidate_user_id")
 	private CandidateUser candidateUser;
 	
 	@JsonIgnore

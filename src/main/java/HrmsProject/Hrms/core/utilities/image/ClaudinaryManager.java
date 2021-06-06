@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.cloudinary.Cloudinary;
@@ -15,6 +16,7 @@ import HrmsProject.Hrms.core.utilities.results.DataResult;
 
 import HrmsProject.Hrms.core.utilities.results.SuccessDataResult;
 
+@Service
 public class ClaudinaryManager implements ImageService {
 
 	Cloudinary cloudinary;

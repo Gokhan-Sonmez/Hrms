@@ -46,6 +46,6 @@ public class Education {
 	
 	@ManyToOne
 	@JoinColumn(name = "resume_id",referencedColumnName =  "id")
-	private Resume resumes;
+	private Resume resume;
 
 }
